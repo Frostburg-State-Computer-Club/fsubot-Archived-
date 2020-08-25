@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+}
+
+group 'com.insilvon'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile 'net.dv8tion:JDA:4.2.0_194'
+}
