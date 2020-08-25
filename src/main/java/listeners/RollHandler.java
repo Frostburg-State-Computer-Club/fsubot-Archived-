@@ -14,22 +14,28 @@ public class RollHandler extends ListenerAdapter {
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
-        if (event.getAuthor().isBot() || !event.getMessage().getContentRaw().startsWith("$")) {
+        if (event.getAuthor().isBot()
+            || !event.getMessage().getContentRaw()
+                .startsWith("$")
+            || !event.getMessage().getContentRaw()
+                .substring(1).startsWith("roll")
+        ) {
             return;
         }
         String command = event.getMessage().getContentRaw().substring(1);
-        if (command.startsWith("roll")) {
-            String[] args = command.split(" ");
-            if (args.length <= 1) {
-                int roll = getRandomNumber(20);
-                event.getChannel().sendMessage(getResponse(roll, event.getAuthor().getName(), 20)).queue();
-            }
-            else {
-                int dice = Integer.parseInt(args[1]);
-                int roll = getRandomNumber(dice);
-                event.getChannel().sendMessage(getResponse(roll, event.getAuthor().getName(), dice)).queue();
-            }
-
+        String[] args = command.split(" ");
+        if (args.length <= 1) {
+            int roll = getRandomNumber(20);
+            event.getChannel().sendMessage(
+                getResponse(roll, event.getAuthor().getName(), 20)
+            ).queue();
+        }
+        else {
+            int dice = Integer.parseInt(args[1]);
+            int roll = getRandomNumber(dice);
+            event.getChannel().sendMessage(
+                getResponse(roll, event.getAuthor().getName(), dice)
+            ).queue();
         }
     }
 
