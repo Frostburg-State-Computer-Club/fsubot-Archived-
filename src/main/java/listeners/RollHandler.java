@@ -32,7 +32,15 @@ public class RollHandler extends ListenerAdapter {
     private MessageEmbed getResponse(int roll, String author) {
         EmbedBuilder builder = new EmbedBuilder();
         builder.setDescription("They got a " + roll + "!");
-        builder.setColor(Color.GREEN);
+        if (roll < 5) {
+            builder.setColor(Color.RED);
+        }
+        if (roll >= 5 && roll < 15) {
+            builder.setColor(Color.YELLOW);
+        }
+        if (roll >= 15) {
+            builder.setColor(Color.GREEN);
+        }
         builder.setTitle(author + " rolls...");
         return builder.build();
     }
