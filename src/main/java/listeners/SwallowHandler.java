@@ -1,5 +1,6 @@
 package listeners;
 
+import java.util.Random; //Used for random number generation
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -14,8 +15,8 @@ public class SwallowHandler extends ListenerAdapter {
         }
         String message = event.getMessage().getContentRaw().substring(1);
         if(message.contains("Swallow")) {
-            int random = getRandomNumber(1);
-            if (random == 0){
+            float randomFloat = rand.nextFloat(); 
+            if (randomFloat < 0.5){
                 event.getChannel().sendMessage("European Swallow").queue();
             }else{
                 event.getChannel().sendMessage("African Swallow").queue();
