@@ -13,7 +13,7 @@ public class HelloHandler extends ListenerAdapter {
         }
         String message = event.getMessage().getContentRaw();
         if(message.contains("This bot sucks")) {
-            event.getChannel().sendMessage("I saw that!!");
+            event.getChannel().sendMessage("I saw that!");
         }
     }
 }
