@@ -13,6 +13,9 @@ public class SwallowHandler extends ListenerAdapter {
         if (event.getAuthor().isBot()|| !event.getMessage.getContentRaw().startWith("$")) {
             return;
         }
+
+        Random rand = new Random();
+
         String message = event.getMessage().getContentRaw().substring(1);
         if(message.contains("Swallow")) {
             float randomFloat = rand.nextFloat(); 
