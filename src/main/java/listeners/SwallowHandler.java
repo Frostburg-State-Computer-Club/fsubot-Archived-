@@ -13,12 +13,12 @@ public class SwallowHandler extends ListenerAdapter {
             return;
         }
         String message = event.getMessage().getContentRaw().substring(1);
-        if(message.contains("$Swallow")) {
-            int random = getRandomNumber(2);
-            if (random == 2){
-                event.getChannel().sendMessage("European Swallow").queue();;
+        if(message.contains("Swallow")) {
+            int random = getRandomNumber(1);
+            if (random == 0){
+                event.getChannel().sendMessage("European Swallow").queue();
             }else{
-                event.getChannel().sendMessage("African Swallow").queue();;
+                event.getChannel().sendMessage("African Swallow").queue();
             }
         }
     }
