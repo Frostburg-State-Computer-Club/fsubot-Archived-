@@ -3,6 +3,7 @@ package app;
 import config.TokenLoader;
 import listeners.EventHandler;
 import listeners.RollHandler;
+import listeners.SteveKHandler;
 import net.dv8tion.jda.api.AccountType;
 import net.dv8tion.jda.api.JDABuilder;
 import javax.security.auth.login.LoginException;
@@ -14,7 +15,8 @@ public class Main {
         builder.setToken(token);
         builder.addEventListeners(
             new EventHandler(),
-            new RollHandler()
+            new RollHandler(),
+            new SteveKHandler()
         );
         try {
             builder.build();

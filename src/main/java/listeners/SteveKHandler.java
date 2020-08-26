@@ -11,9 +11,9 @@ public class SteveKHandler extends ListenerAdapter{
         if (event.getAuthor().isBot() || !event.getMessage().getContentRaw().startsWith("$")) {
             return;
         }
-        String message = event.getMessage().getContentRaw();
-        if(message.equals("hackSteve")) {
-            event.getChannel().sendMessage("Hacked Steve's account!");
+        String message = event.getMessage().getContentRaw().substring(1);
+        if (message.equals("hackSteve")) {
+            event.getChannel().sendMessage("Hacked Steve's account!").queue();
         }
     }
 }
