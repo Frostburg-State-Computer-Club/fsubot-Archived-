@@ -12,7 +12,7 @@ public class SteveKHandler extends ListenerAdapter{
             return;
         }
         String message = event.getMessage().getContentRaw().substring(1);
-        if(message.equals("hackSteve")) {
+        if (message.equals("hackSteve")) {
             event.getChannel().sendMessage("Hacked Steve's account!").queue();
         }
     }
