@@ -40,7 +40,6 @@ public class GeneralCommandHandler extends ListenerAdapter {
                 if (args.length > 1) {
                     redirect = args[1];
                 }
-                System.out.println(redirect);
                 switch (redirect) {
                     case "tools":
                         builder2.setDescription(
