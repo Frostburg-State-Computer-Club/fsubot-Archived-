@@ -44,7 +44,8 @@ public class GeneralCommandHandler extends ListenerAdapter {
                     "> » `$I'm hungry` - ...\n" +
                     "> » `$pizza` - ...pizza\n" +
                     "> » `$pig [args]` - Translate a phrase into pig latin.\n" +
-                    "> » `$roll [amount]` - Roll a dice!\n"
+                    "> » `$roll [amount]` - Roll a dice!\n" +
+                    "> » `$weatherAPI [zipcode]` - Show weather data for your area.\n"
                 );
                 event.getChannel().sendMessage(builder2.build()).queue();
                 break;
