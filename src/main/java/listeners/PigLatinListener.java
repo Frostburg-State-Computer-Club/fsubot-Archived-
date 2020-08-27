@@ -13,7 +13,7 @@ public void onMessageReceived(MessageReceivedEvent event) {
    }
    String command = event.getMessage().getContentRaw().substring(1);
    if (command.startsWith("pig")) {
-       if(!command.matches("[^a-zA-Z\\s]+")) {
+       if(!command.matches("[a-zA-Z\\s]+")) {
            event.getChannel().sendMessage("Letters only! Numbers and punctuation do not translate to pig latin").queue();
            return;
        }
@@ -26,7 +26,7 @@ public void onMessageReceived(MessageReceivedEvent event) {
                 pigLatinMessage += words[i] + "way";
            } else {
                //switch the first group of consonants with the rest of the letter and add "ay"
-               pigLatinMessage += words[i].replaceAll("(?i)(^[^aeiou]+)(.*)", "$2$1ay");
+               pigLatinMessage += words[i].replaceAll("(?i)(^[^aeiou]+)(.*)", "$2$1ay ");
            }
        }
        event.getChannel().sendMessage(pigLatinMessage).queue();
