@@ -16,7 +16,7 @@ public class GeneralCommandHandler extends ListenerAdapter {
 
         String command = event.getMessage().getContentRaw().substring(1);
         String[] args = command.split(" ");
-
+        command = args[0];
         switch (command) {
             case "ping":
                 event.getChannel().sendMessage("Pong!").queue();
@@ -40,15 +40,16 @@ public class GeneralCommandHandler extends ListenerAdapter {
                 if (args.length > 1) {
                     redirect = args[1];
                 }
+                System.out.println(redirect);
                 switch (redirect) {
                     case "tools":
                         builder2.setDescription(
                             "> » `VSCode` - The best Text Editor Ever. https://code.visualstudio.com/download\n" +
-                            "> » `IntelliJ Idea` - Super powerful JAVA IDE. https://www.jetbrains.com/idea/download/#section=windows" +
-                            "> » `NetBeans` - Most common professor requested IDE. https://netbeans.apache.org/download/index.html" +
-                            "> » `Java SDKs` - https://www.oracle.com/java/technologies/javase-downloads.html" +
-                            "> » `Github` - https://github.com/" +
-                            "> » `Free Student Resources` - https://e5.onthehub.com/WebStore/ProductsByMajorVersionList.aspx?ws=dd8bb52b-d79b-e011-969d-0030487d8897&vsro=8&JSEnabled=1" +
+                            "> » `IntelliJ Idea` - Super powerful JAVA IDE. https://www.jetbrains.com/idea/download/#section=windows\n" +
+                            "> » `NetBeans` - Most common professor requested IDE. https://netbeans.apache.org/download/index.html\n" +
+                            "> » `Java SDKs` - https://www.oracle.com/java/technologies/javase-downloads.html\n" +
+                            "> » `Github` - https://github.com/\n" +
+                            "> » `Free Student Resources` - https://e5.onthehub.com/WebStore/ProductsByMajorVersionList.aspx?ws=dd8bb52b-d79b-e011-969d-0030487d8897&vsro=8&JSEnabled=1\n" +
                             "> » `Paws` - https://csprodweb2.frostburg.edu/psp/GoBobcats/?cmd=login"
                         );
                         builder2.setAuthor("Tools + Links");
