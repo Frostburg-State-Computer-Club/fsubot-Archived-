@@ -1,19 +1,19 @@
-package listeners;
+package components.listeners;
 
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
-public class SteveKHandler extends ListenerAdapter{
+public class HelloHandler extends ListenerAdapter {
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
         // Cancel this action if the author was the bot,
         // or cancel if the message didn't start with our command character.
-        if (event.getAuthor().isBot() || !event.getMessage().getContentRaw().startsWith("$")) {
+        if (event.getAuthor().isBot()) {
             return;
         }
-        String message = event.getMessage().getContentRaw().substring(1);
-        if (message.equals("hackSteve")) {
-            event.getChannel().sendMessage("Hacked Steve's account!").queue();
+        String message = event.getMessage().getContentRaw();
+        if(message.contains("This bot sucks")) {
+            event.getChannel().sendMessage("I saw that!");
         }
     }
 }
