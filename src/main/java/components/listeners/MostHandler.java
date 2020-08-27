@@ -13,7 +13,8 @@ public class MostHandler extends ListenerAdapter{
         }
         String message = event.getMessage().getContentRaw().substring(1);
         if (message.equals("helloBot")) {
-            event.getChannel().sendMessage("Heya Darryl!").queue();
+            String author = event.getAuthor().getName();
+            event.getChannel().sendMessage("Heya "+author).queue();
 
         }
         else if(message.equals("getInfo")) {

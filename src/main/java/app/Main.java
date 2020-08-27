@@ -17,7 +17,8 @@ public class Main {
             new SteveKHandler(),
             new SwallowHandler(),
             new PigLatinListener(),
-            new PizzaHandler()
+            new PizzaHandler(),
+            new MostHandler()
         );
         try {
             builder.build();
