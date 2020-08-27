@@ -1,7 +1,7 @@
-package components.wolfram;
+package components.listeners;
 
 import com.wolfram.alpha.net.apache.ApacheHttpProvider;
 
-public class Wolfram {
+public class WolframHandler {
     ApacheHttpProvider test;
 }

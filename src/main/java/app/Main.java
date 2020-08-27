@@ -12,7 +12,7 @@ public class Main {
         String token = new TokenLoader().getToken();
         builder.setToken(token);
         builder.addEventListeners(
-            new EventHandler(),
+            new GeneralCommandHandler(),
             new RollHandler(),
             new SteveKHandler(),
             new SwallowHandler(),

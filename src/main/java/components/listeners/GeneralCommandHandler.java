@@ -4,7 +4,9 @@ import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
-public class EventHandler extends ListenerAdapter {
+import java.awt.*;
+
+public class GeneralCommandHandler extends ListenerAdapter {
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
@@ -26,6 +28,23 @@ public class EventHandler extends ListenerAdapter {
                 builder.setFooter("footer");
                 builder.setTitle("Title!");
                 event.getChannel().sendMessage(builder.build()).queue();
+                break;
+            case "help":
+                EmbedBuilder builder2 = new EmbedBuilder();
+                builder2.setTitle("FSU Bot Help Menu");
+                builder2.setColor(Color.RED);
+                builder2.setDescription(
+                    "> » `$hello` - Say hello to the bot!\n" +
+                    "> » `$help` - View this menu.\n" +
+                    "> » `$ping` - Pong.\n" +
+                    "> » `$swallow` - Determine if African or European.\n" +
+                    "> » `$weather` - View the weather outside!\n" +
+                    "> » `$hackSteve` - 'Nuff said.\n" +
+                    "> » `$pig [args]` - Translate a phrase into pig latin.\n" +
+                    "> » `$roll [amount]` - Roll a dice!\n"
+                );
+                event.getChannel().sendMessage(builder2.build()).queue();
+                break;
         }
     }
 }
