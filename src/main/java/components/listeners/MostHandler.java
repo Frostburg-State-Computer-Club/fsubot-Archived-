@@ -1,9 +1,9 @@
-package listeners;
+package components.listeners;
 
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
-public class SteveKHandler extends ListenerAdapter{
+public class MostHandler extends ListenerAdapter{
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
         // Cancel this action if the author was the bot,
@@ -12,8 +12,14 @@ public class SteveKHandler extends ListenerAdapter{
             return;
         }
         String message = event.getMessage().getContentRaw().substring(1);
-        if (message.equals("hackSteve")) {
-            event.getChannel().sendMessage("Hacked Steve's account!").queue();
+        if (message.equals("helloBot")) {
+            String author = event.getAuthor().getName();
+            event.getChannel().sendMessage("Heya "+author).queue();
+
+        }
+        else if(message.equals("getInfo")) {
+            event.getChannel().sendMessage((CharSequence) event).queue();
+            event.getChannel().sendMessage(event.getMessage()).queue();
         }
     }
 }
