@@ -16,7 +16,7 @@ public class MostHandler extends ListenerAdapter{
             event.getChannel().sendMessage("Heya Darryl!").queue();
 
         }
-        else{
+        else if(message.equals("getInfo")){
             event.getChannel().sendMessage((CharSequence) event);
             event.getChannel().sendMessage(event.getMessage());
         }
