@@ -16,7 +16,8 @@ public class Main {
             new RollHandler(),
             new SteveKHandler(),
             new SwallowHandler(),
-            new PigLatinListener()
+            new PigLatinListener(),
+            new PizzaHandler()
         );
         try {
             builder.build();

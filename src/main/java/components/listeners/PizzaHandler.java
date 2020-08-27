@@ -1,4 +1,4 @@
-package listeners;
+package components.listeners;
 
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -16,10 +16,10 @@ public class PizzaHandler extends ListenerAdapter {
        event.getChannel().sendMessage("Pizza Time!").queue();
    }
    if (message.equals("I'm hungry")) {
-   event.getChannel().sendMessage("Pizza Time!").queue();
+       event.getChannel().sendMessage("Pizza Time!").queue();
    }
    if (message.contains("pizza")) {
-   event.getChannel().sendMessage("Pizza Time!").queue();
+       event.getChannel().sendMessage("Pizza Time!").queue();
    }
 
 }

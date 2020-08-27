@@ -40,6 +40,9 @@ public class GeneralCommandHandler extends ListenerAdapter {
                     "> » `$swallow` - Determine if African or European.\n" +
                     "> » `$weather` - View the weather outside!\n" +
                     "> » `$hackSteve` - 'Nuff said.\n" +
+                    "> » `$What time is it?` - ...\n" +
+                    "> » `$I'm hungry` - ...\n" +
+                    "> » `$pizza` - ...pizza\n" +
                     "> » `$pig [args]` - Translate a phrase into pig latin.\n" +
                     "> » `$roll [amount]` - Roll a dice!\n"
                 );
