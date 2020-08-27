@@ -1,5 +1,6 @@
 package app;
 
+import components.listeners.corecommands.GeneralCommandHandler;
 import components.listeners.weatherapi.WeatherAPI;
 import config.TokenLoader;
 import components.listeners.*;
@@ -20,6 +21,7 @@ public class Main {
             new PigLatinListener(),
             new PizzaHandler(),
             new MostHandler(),
+            new WeatherHandler(),
             new WeatherAPI()
         );
         try {
