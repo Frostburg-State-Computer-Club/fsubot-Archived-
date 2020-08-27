@@ -1,5 +1,6 @@
 package app;
 
+import components.listeners.weatherapi.WeatherAPI;
 import config.TokenLoader;
 import components.listeners.*;
 import net.dv8tion.jda.api.AccountType;
@@ -18,7 +19,8 @@ public class Main {
             new SwallowHandler(),
             new PigLatinListener(),
             new PizzaHandler(),
-            new MostHandler()
+            new MostHandler(),
+            new WeatherAPI()
         );
         try {
             builder.build();

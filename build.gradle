@@ -14,4 +14,5 @@ repositories {
 
 dependencies {
     compile 'net.dv8tion:JDA:4.2.0_194'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.11.2'
 }
